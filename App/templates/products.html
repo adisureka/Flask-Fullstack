@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block header %}
+	<div class="container">
+	Products Page
+	</div>
+{% endblock %}	
+
+{% block body%}
+	<div class="container">
+		<h1> {{ info }}</h1>
+		<table class="table table-info table-striped w-100">
+			<tr>
+				<td class="col-md-1">
+					<label class="text-primary">ID</label>
+				</td>
+				<td class="col-md-1">
+					<label class="text-primary">Product ID</label>
+				</td>
+				<td class="col-md-1">
+					<label class="text-primary">Description</label>
+				</td>
+				<td class="col-md-1">
+					<label class="text-primary">Price</label>
+				</td>
+				<td>
+				</td>
+			</tr>
+			{% for row in products%}
+			<tr>
+				{% for item in row %}
+					<td class="col-md-3">
+						<label class="text-primary">{{ item }}</label>
+					</td>
+
+				{% endfor%}
+				<td>
+					<a class="btn btn-primary" href = "{{ url_for('charge') }}">Buy Now</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+		<a href="{{ url_for('login') }}">Login Page</a>
+	</div>
+{% endblock %}
+	
+
+	

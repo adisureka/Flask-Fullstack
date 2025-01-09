@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block header %}
+	<div class="container">
+		SignUp Page
+	</div>
+{% endblock %}
+
+{% block body%}
+	<div class="container">
+		<form action="{{ url_for('products') }}" 
+			  method="post">
+			  <input type="text"
+			         name="name"
+			         placeholder="Username"
+			         class="form-control mb-2">
+			  <input type="password"
+			         name="password"
+			         placeholder="Password"
+			         class="form-control mb-2">
+			  <input type="password"
+			         name="check"
+			         placeholder="Input password again"
+			         class="form-control mb-2">
+			  <button class="btn btn-primary w-100">Sign up</button>
+	    </form>
+
+		<a href="{{ url_for('login') }}">Sign in</a>
+	</div>
+{% endblock %}	

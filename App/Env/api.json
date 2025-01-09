@@ -1,0 +1,7 @@
+{
+	"public_key": "your api public key",
+	"secret_key": "your api secret key",
+	"product_key": ["your product key", 
+		            "your product key", 
+		            "your product key"]
+}

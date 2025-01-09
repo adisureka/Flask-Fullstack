@@ -1,0 +1,47 @@
+{% extends "layout.html"%}
+
+{% block header %}
+{% endblock %}
+
+{% block body%}
+	<body>
+		<div class="container">
+			<div class="header clearfix">
+				<nav>
+					<ul class="nav nav-pills float-right">
+						<li class="nav-item">
+							<a href= "{{ url_for('login') }}" class='nav-link active'>Home</a>
+				
+						</li>
+					</ul>
+				</nav>
+				<h3 class="text-muted">Store</h3>
+			</div>
+		
+
+			<div class='jumbotron mt-4 mb-5 p-5 bg-light text-success rounded'>
+			
+				<h1 class="display-3">The Product</h1>
+				
+				<p class="lead">Purchase The Product 
+				for only $99.</p>
+				
+				<a id="buy_now_btn" class="btn btn-success w-25">Buy Now</a>
+				
+			</div>
+
+
+			<footer class="footer">
+				<p>&copy; Store 2017</p>
+				<!-- &copy; is the copyright icon, case sensitive-->
+			</footer>
+
+			<script src="https://js.stripe.com/v3/"></script>
+			<script>
+				const checkout_public_key = "{{ checkout_public_key }}";
+				const checkout_session_id = "{{ checkout_session_id }}";
+			</script>
+			<script src="{{ url_for('static', filename='setting.js') }}"></script>
+		</div> <!--container create a frame space for your element-->
+	</body>
+{% endblock%}
